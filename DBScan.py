@@ -16,6 +16,7 @@ class DBSCAN:
     def distance(self, point1: list[float], point2: list[float]):           #evclid distation
         return np.sqrt(np.sum(((np.array(point1) - np.array(point2)) ** 2)))
 
+    
     def neighbour(self, p: list[float]):        #neigbours root point
         result = []
         for i in self.x:
@@ -23,6 +24,7 @@ class DBSCAN:
                 result.append(i)
         return result
 
+    
     def clustering(self) -> int:
         c_cluster = 0               #count clusters
         for cl in range(len(self.x)):
@@ -47,6 +49,7 @@ class DBSCAN:
         print(c_cluster)
         return c_cluster
 
+    
     def draw(self, count_cluster: int) -> None:
         random_color = []
         for i in range(0, count_cluster):
@@ -63,7 +66,6 @@ class DBSCAN:
                 else:
                     color = random_color[cluster - 1]
                     plt.scatter(point[0], point[1], c=color)
-                    pd.DataFrame(self.clusters[cluster])
-
+        
         plt.title('DBSCAN Clustering')
         plt.show()
