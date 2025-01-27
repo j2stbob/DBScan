@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-data = pd.read_csv("../Бауманка/Datas/color.csv")
+data = pd.read_csv("color.csv")
 data = data.drop(columns=["color"])
 data_array = np.array(data)
 data = []
