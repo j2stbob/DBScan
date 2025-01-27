@@ -7,7 +7,7 @@ data = pd.read_csv("color.csv")
 data = data.drop(columns=["color"])
 data_array = np.array(data)
 data = []
-for i in data_array:
+for i in data_array:                # sort data to list
     data.append(list(i))
 
 
